@@ -7,6 +7,9 @@ from userApp.forms import UserForm
 import json
 from django.views.generic import View
 from userApp.my_exception import MyException
+import logging
+
+logger=logging.getLogger("userApp")
 
 # Create your views here.
 
@@ -64,7 +67,7 @@ class UserView(View):
         if form.is_valid():
             name = data['username']
             passwd = data['password']
-            print("username:" + name + " passwd:" + passwd)
+            logger.info("username:" + name + " passwd:" + passwd)
             user = authenticate(username=name, password=passwd)
             if user:
                 login(request, user)
