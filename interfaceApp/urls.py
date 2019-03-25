@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 import views
 from django.urls import path
-from interfaceApp import views
+from interfaceApp.views.service_list_view import service_list_view
 urlpatterns = [
-    path('service/',views.InterfaceView.as_view()),
+    path('service/',service_list_view.as_view()),
     # path('register/',views.register),
     # path('getUser/',views.getUser),
 ]

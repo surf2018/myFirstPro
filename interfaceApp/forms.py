@@ -1,7 +1,7 @@
 from django import forms
 
 class UserForm(forms.Form):
-    name=forms.CharField(
+    username=forms.CharField(
         required=True,
         max_length=20,
         min_length=3,
