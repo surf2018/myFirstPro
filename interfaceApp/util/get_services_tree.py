@@ -16,7 +16,7 @@ class ServerUtil:
             parent_name=object.name
         for result in servers:
             nodeInfo=model_to_dict(result)
-            nodeInfo['children']=ServerUtil.get_server_tree(nodeInfo.id)
+            nodeInfo['children']=ServerUtil.get_server_tree(nodeInfo['id'])
             nodeInfo['parent_name']=parent_name
             res.append(nodeInfo)
         return res
