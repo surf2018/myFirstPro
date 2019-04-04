@@ -17,8 +17,9 @@ from django.contrib import admin
 import views
 from django.urls import path
 from interfaceApp.views.service_list_view import service_list_view
+from interfaceApp.views.service_detail_view import service_detail_view
 urlpatterns = [
     path('service/',service_list_view.as_view()),
-    # path('register/',views.register),
+    path('service/<int:sid>',service_detail_view.as_view()),
     # path('getUser/',views.getUser),
 ]
