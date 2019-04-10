@@ -11,26 +11,28 @@ from interfaceApp.forms.ServiceForms import ServiceForm
 # Create your views here.
 class service_detail_view (View):
     def put(self,request,*args,**kwargs):
+        server_id=(request.path).split("/")[-1]
+        print(server_id)
         data = json.loads(request.body)
+        print(data)
         form = ServiceForm(data)
+        print(form)
         if form.is_valid():
-            server_name = data['servername']
-            server_desctiption = data['serverdesp']
+            server_name = data['name']
+            server_desctiption = data['description']
             server_parent = data['parent']
-            server = Service.objects.create(name=server_name, description=server_desctiption, parent=server_paren
-        return response_succeess(servers)
-    def post(self,request,*args,**kwargs):
-        data=json.loads(request.body)
-        form = ServiceForm(data)
-        if form.is_valid():
-            server_name=data['name']
-            server_desctiption=data['description']
-            server_parent=data['parent']
-            server=Service.objects.create(name=server_name,description=server_desctiption,parent=server_parent)
-            if server:
-                return response_succeess('创建server成功')
+            new_server = Service.objects.filter(id=int(server_id)).update(name=server_name,description=server_desctiption, parent=server_parent)
+            print("new_server"+str(new_server))
+            if(new_server):
+                return response_succeess(new_server)
             else:
-                raise MyException("创建server异常")
+                return response_failed("更新数据库失败")
         else:
             print(form.errors)
-            return response_failed("创建server,表单验证失败")
+            return response_failed("更新server,表单验证失败")
+    def delete(self,request,*args,**kwargs):
+        print("删除sevice")
+        server_id = (request.path).split("/")[-1]
+        del_server=Service.objects.get(id=server_id)
+        del_server.delete()
+        return response_succeess("删除成功")
