@@ -3,7 +3,7 @@ from django.views.generic import View
 from interfaceApp.util.get_services_tree import ServerUtil
 from userApp.my_exception import MyException
 from django.contrib.sessions.models import Session
-from interfaceApp.models import Service,IS_ROOT
+from interfaceApp.models.models import Service,IS_ROOT
 from myFirstPro.common import response_failed,response_succeess
 import json
 from userApp.my_exception import MyException

@@ -3,9 +3,11 @@ from django.views.generic import View
 from interfaceApp.util.get_services_tree import ServerUtil
 from userApp.my_exception import MyException
 from django.contrib.sessions.models import Session
-from interfaceApp.models import Service,IS_ROOT
+from interfaceApp.models.models import Service,IS_ROOT
+from interfaceApp.models.interface import Interface
 from myFirstPro.common import response_failed,response_succeess
 import json
+from django.forms.models import model_to_dict
 from userApp.my_exception import MyException
 from interfaceApp.forms.ServiceForms import ServiceForm
 # Create your views here.
@@ -36,3 +38,13 @@ class service_detail_view (View):
         del_server=Service.objects.get(id=server_id)
         del_server.delete()
         return response_succeess("删除成功")
+    def get(self,request,*args,**kwargs):
+        print("获取服务的interface")
+        s_id = (request.path).split("/")[-1]
+        print(s_id)
+        interface=Interface.objects.filter(service=s_id)
+        ret=[]
+        for result in interface:
+            interfaceInfo=model_to_dict(result)
+            ret.append(interfaceInfo)
+        return response_succeess(ret)

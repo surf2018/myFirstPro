@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import View
 from userApp.my_exception import MyException
 from django.contrib.sessions.models import Session
-from interfaceApp.models import Service
+from interfaceApp.models.models import Service
 from django.forms.models import model_to_dict
 # Create your views here.
 class ServerUtil:

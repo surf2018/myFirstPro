@@ -19,10 +19,11 @@ class InterfaceForm(forms.Form):
 
     assertion = ObjectField(required=False)
     def clean_service_id(self):
-        sid=self.cleaned_data.get('service_id')
+        service_id=self.cleaned_data.get('service_id')
         try:
-            Service.objects.get(id==sid)
-        except：
+            Service.objects.get(id=service_id)
+        except:
             raise forms.ValidationError("服务部存在")
         else:
+            return service_id
 

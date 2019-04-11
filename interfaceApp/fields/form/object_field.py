@@ -1,8 +1,10 @@
 from django import forms
 import json
+
 class ObjectField(forms.Field):
     def __init__(self, *args, **kwargs):
         super(ObjectField, self).__init__(*args, **kwargs)
+
     def to_python(self, value):
         """
                 数据从moedel读进来的时候做的处理
