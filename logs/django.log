@@ -791,3 +791,13 @@
 2019-04-15 14:33:13,835 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/1 HTTP/1.1" 200 48
 2019-04-15 14:33:15,271 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/17 HTTP/1.1" 200 0
 2019-04-15 14:33:15,321 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/17 HTTP/1.1" 200 48
+2019-04-18 11:24:38,737 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/ HTTP/1.1" 200 0
+2019-04-18 11:24:38,739 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /user/usr/ HTTP/1.1" 200 0
+2019-04-18 11:24:39,256 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/ HTTP/1.1" 200 2293
+2019-04-18 11:24:39,270 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /user/usr/ HTTP/1.1" 200 77
+2019-04-18 11:24:43,013 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/18 HTTP/1.1" 200 0
+2019-04-18 11:24:43,353 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/18 HTTP/1.1" 200 48
+2019-04-18 12:31:50,760 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/3 HTTP/1.1" 200 0
+2019-04-18 12:31:50,862 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/3 HTTP/1.1" 200 48
+2019-04-18 12:31:51,659 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/3 HTTP/1.1" 200 0
+2019-04-18 12:31:51,730 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/3 HTTP/1.1" 200 48
