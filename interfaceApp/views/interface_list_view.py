@@ -1,29 +1,33 @@
 from django.shortcuts import render
 from django.views.generic import View
-from interfaceApp.util.get_services_tree import ServerUtil
-from userApp.my_exception import MyException
-from django.contrib.sessions.models import Session
 from interfaceApp.models import Service,IS_ROOT
+from django.forms.models import model_to_dict
+from interfaceApp.models.interface import Interface
 from myFirstPro.common import response_failed,response_succeess
 import json
 from userApp.my_exception import MyException
-from interfaceApp.forms.ServiceForms import ServiceForm
+from interfaceApp.forms.InterFaceForms import InterfaceForm
 # Create your views here.
 class InterfaceListView (View):
+    #获取所有的接口列表
     def get(self,request,*args,**kwargs):
-
+        ret=[]
+        interfaces=Interface.objects.all()
+        if interfaces:
+            for i in interfaces:
+                interface_dic=model_to_dict(i)
+                ret.append(interface_dic)
+        return response_succeess(ret)
     def post(self,request,*args,**kwargs):
+        #创建接口
         data=json.loads(request.body)
-        form = ServiceForm(data)
+        form = InterfaceForm(data)
         if form.is_valid():
-            server_name=data['name']
-            server_desctiption=data['description']
-            server_parent=data['parent']
-            server=Service.objects.create(name=server_name,description=server_desctiption,parent=server_parent)
+            server=Service.objects.create(**form.cleaned_data)
             if server:
-                return response_succeess('创建server成功')
+                return response_succeess('创建interface成功')
             else:
-                raise MyException("创建server异常")
+                raise MyException("创建interface异常")
         else:
             print(form.errors)
-            return response_failed("创建server,表单验证失败")
+            return response_failed("创建interface,表单验证失败")

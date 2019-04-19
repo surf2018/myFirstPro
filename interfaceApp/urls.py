@@ -20,9 +20,12 @@ from interfaceApp.views.service_list_view import service_list_view
 from interfaceApp.views.service_detail_view import service_detail_view
 from interfaceApp.views.interface_list_view import InterfaceListView
 from interfaceApp.views.interface_detail_view import InterfaceDetailView
+from interfaceApp.views.service_interface_view import ServiceInterfacesView
+
 urlpatterns = [
     path('service/',service_list_view.as_view()),
     path('service/<int:sid>',service_detail_view.as_view()),
+    path('service/<int:sid>/interfaces',ServiceInterfacesView.as_view()),
     path('imp/',InterfaceListView.as_view()),
     path('imp/<int:interfaceId>',InterfaceDetailView.as_view())
     # path('getUser/',views.getUser),
