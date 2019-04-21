@@ -832,3 +832,18 @@
 2019-04-19 17:33:56,708 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/1/interfaces HTTP/1.1" 200 59
 2019-04-19 17:35:25,482 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/1/interfaces HTTP/1.1" 200 0
 2019-04-19 17:35:25,588 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/1/interfaces HTTP/1.1" 200 48
+2019-04-21 10:11:33,416 WARNING  D:\Python36\lib\site-packages\django\utils\log.py[line:228] Not Found: /
+2019-04-21 10:11:33,420 WARNING  D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET / HTTP/1.1" 404 2249
+2019-04-21 10:11:33,772 WARNING  D:\Python36\lib\site-packages\django\utils\log.py[line:228] Not Found: /favicon.ico
+2019-04-21 10:11:33,773 WARNING  D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /favicon.ico HTTP/1.1" 404 2300
+2019-04-21 10:11:42,861 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /user/usr/ HTTP/1.1" 200 0
+2019-04-21 10:11:43,060 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "PUT /user/usr/ HTTP/1.1" 200 93
+2019-04-21 10:11:43,167 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/ HTTP/1.1" 200 0
+2019-04-21 10:11:43,190 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /user/usr/ HTTP/1.1" 200 0
+2019-04-21 10:11:43,265 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/ HTTP/1.1" 200 662
+2019-04-21 10:11:43,272 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /user/usr/ HTTP/1.1" 200 76
+2019-04-21 10:11:53,227 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/5/interfaces HTTP/1.1" 200 0
+2019-04-21 10:11:53,283 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/5/interfaces HTTP/1.1" 200 65
+2019-04-21 10:12:01,510 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/5/interfaces HTTP/1.1" 200 65
+2019-04-21 11:00:11,994 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "OPTIONS /servers/service/5/interfaces HTTP/1.1" 200 0
+2019-04-21 11:00:12,063 INFO     D:\Python36\lib\site-packages\django\core\servers\basehttp.py[line:124] "GET /servers/service/5/interfaces HTTP/1.1" 200 48
