@@ -8,3 +8,5 @@
 2019-04-15 09:25:18,047 INFO     D:\PycharmProjects\myFirstPro\userApp\views.py[line:70] username:soffee passwd:123456
 2019-04-19 17:27:02,645 INFO     D:\PycharmProjects\myFirstPro\userApp\views.py[line:70] username:soffee passwd:123456
 2019-04-21 10:11:42,868 INFO     D:\pycharmProjects\myFirstPro\userApp\views.py[line:70] username:admin passwd:123456
+2019-04-25 21:46:48,712 INFO     D:\pycharmProjects\myFirstPro\userApp\views.py[line:70] username:admin passwd:123456
+2019-04-25 22:39:46,452 INFO     D:\pycharmProjects\myFirstPro\userApp\views.py[line:70] username:admin passwd:123456

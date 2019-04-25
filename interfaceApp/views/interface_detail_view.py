@@ -30,7 +30,8 @@ class InterfaceDetailView (View):
             print(form.errors)
             return response_failed("更新interface,表单验证失败")
 
-    def delete(self, request,interface_id,*args, **kwargs):
+    def delete(self, request,*args, **kwargs):
         print("删除interface")
-        del_interface= Interface.objects.filter(id=interface_id).delte()
+        interface_id=request.path.split('/')[-1]
+        del_interface= Interface.objects.filter(id=interface_id).delete()
         return response_succeess("删除接口成功")

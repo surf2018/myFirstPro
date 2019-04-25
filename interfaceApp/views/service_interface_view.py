@@ -13,7 +13,7 @@ class ServiceInterfacesView (View):
         sid=request.path.split('/')[3]
         print(sid)
         ret=[]
-        server_interfaces=Interface.objects.filter(service=sid)
+        server_interfaces=Interface.objects.filter(service_id=sid)
         for i in server_interfaces:
             interface=model_to_dict(i)
             ret.append(interface)

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import View
-from interfaceApp.models import Service,IS_ROOT
 from django.forms.models import model_to_dict
 from interfaceApp.models.interface import Interface
 from myFirstPro.common import response_failed,response_succeess
@@ -23,8 +22,8 @@ class InterfaceListView (View):
         data=json.loads(request.body)
         form = InterfaceForm(data)
         if form.is_valid():
-            server=Service.objects.create(**form.cleaned_data)
-            if server:
+            interface=Interface.objects.create(**form.cleaned_data)
+            if interface:
                 return response_succeess('创建interface成功')
             else:
                 raise MyException("创建interface异常")
