@@ -10,9 +10,11 @@ from interfaceApp.forms.ServiceForms import ServiceForm
 from interfaceApp.forms.InterFaceForms import InterfaceForm
 # Create your views here.
 class InterfaceDetailView (View):
-    def get(self, request, interface_id, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         # 获取单个interfaces
-        interface = Interface.objects.filter(id=interface_id)
+        interface_id = (request.path).split("/")[-1]
+        print("interface_id:"+interface_id)
+        interface = Interface.objects.get(id=interface_id)
         imp = model_to_dict(interface)
         return response_succeess(imp)
     def put(self, request, interface_id,*args, **kwargs):
